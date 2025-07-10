@@ -14,7 +14,7 @@ const LowStockAlert: React.FC = () => {
 
   return (
     <div className="low-stock-alert-bar">
-      <strong>אזהרה:</strong> יש {lowStock.length} מוצרים עם מלאי נמוך!
+      <strong>Warning:</strong> {lowStock.length} products have low stock!
       <ul>
         {lowStock.map(p => (
           <li key={p.id}>{p.name} ({p.quantity})</li>

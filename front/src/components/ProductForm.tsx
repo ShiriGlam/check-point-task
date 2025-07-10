@@ -45,33 +45,33 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onCancel }
       }
       onSubmit();
     } catch (err: any) {
-      setError('שגיאה בשמירה');
+      setError('Error saving');
     }
   };
 
   return (
     <form className="product-form" onSubmit={handleSubmit}>
-      <h2>{isEdit ? 'עריכת מוצר' : 'הוספת מוצר'}</h2>
+      <h2>{isEdit ? 'Edit Product' : 'Add Product'}</h2>
       <div>
-        <label>שם:</label>
+        <label>Name:</label>
         <input name="name" value={form.name} onChange={handleChange} required />
       </div>
       <div>
-        <label>קטגוריה:</label>
+        <label>Category:</label>
         <input name="category" value={form.category} onChange={handleChange} required />
       </div>
       <div>
-        <label>מחיר:</label>
+        <label>Price:</label>
         <input name="price" type="number" value={form.price} onChange={handleChange} min={0} step={0.01} required />
       </div>
       <div>
-        <label>כמות:</label>
+        <label>Quantity:</label>
         <input name="quantity" type="number" value={form.quantity} onChange={handleChange} min={0} required />
       </div>
       {error && <div className="error">{error}</div>}
       <div className="form-actions">
-        <button type="submit">{isEdit ? 'עדכן' : 'הוסף'}</button>
-        <button type="button" onClick={onCancel}>ביטול</button>
+        <button type="submit">{isEdit ? 'Update' : 'Add'}</button>
+        <button type="button" onClick={onCancel}>Cancel</button>
       </div>
     </form>
   );

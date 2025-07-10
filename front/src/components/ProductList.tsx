@@ -43,9 +43,9 @@ const ProductList: React.FC = () => {
   return (
     <div className="product-list-container">
       <div className="product-list-header">
-        <h1>ניהול מוצרים</h1>
+        <h1>Product Management</h1>
         <div className="product-list-actions">
-          <button onClick={handleAdd}>הוסף מוצר</button>
+          <button onClick={handleAdd}>Add Product</button>
           <CsvImport onImport={fetchProducts} />
         </div>
       </div>

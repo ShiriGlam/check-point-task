@@ -4,6 +4,7 @@ export interface Product {
   category: string;
   price: number;
   quantity: number;
+  isLowStock: boolean;
   createdAt: string;
   updatedAt: string;
 }

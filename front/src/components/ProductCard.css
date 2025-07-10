@@ -1,4 +1,4 @@
-/* ProductCard - Dark Theme */
+/* ProductCard  */
 .product-card {
   background: #23262f;
   color: #f1f1f1;
@@ -50,16 +50,7 @@
   display: flex;
   gap: 8px;
 }
-.product-card .card-actions button {
-  background: none;
-  border: none;
-  color: #a3a8f0;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
+
 .product-card .card-actions button:hover {
   background: #2d3142;
 }

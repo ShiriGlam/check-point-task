@@ -20,7 +20,7 @@
   letter-spacing: 1px;
 }
 .product-list-actions button {
-  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  background: blue;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -28,10 +28,9 @@
   font-size: 1rem;
   margin-left: 12px;
   cursor: pointer;
-  transition: background 0.2s;
 }
 .product-list-actions button:hover {
-  background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+  background:blue;
 }
 .product-list-grid {
   display: grid;

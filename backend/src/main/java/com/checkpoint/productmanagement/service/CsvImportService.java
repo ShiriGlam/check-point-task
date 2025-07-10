@@ -40,7 +40,7 @@ public class CsvImportService {
             }
             
             String[] line;
-            int lineNumber = 1; // Start from 1 since we skipped header
+            int lineNumber = 1; 
             
             while ((line = reader.readNext()) != null) {
                 lineNumber++;
@@ -70,9 +70,7 @@ public class CsvImportService {
         return result;
     }
     
-    /**
-     * Parse a single CSV line into ProductDto
-     */
+
     private ProductDto parseCsvLine(String[] line, int lineNumber) {
         if (line.length < 4) {
             throw new IllegalArgumentException("Line must have at least 4 columns");

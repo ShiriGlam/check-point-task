@@ -16,6 +16,7 @@ public class Product {
     private String category;
     private BigDecimal price;
     private Integer quantity;
+    private boolean isLowStock;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 } 

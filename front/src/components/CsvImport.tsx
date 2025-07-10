@@ -22,7 +22,7 @@ const CsvImport: React.FC<CsvImportProps> = ({ onImport }) => {
       setResult(res);
       onImport();
     } catch (err) {
-      setError('שגיאה בייבוא קובץ');
+      setError('Error importing file');
     }
   };
 
@@ -31,7 +31,7 @@ const CsvImport: React.FC<CsvImportProps> = ({ onImport }) => {
       <input type="file" accept=".csv" ref={fileInput} onChange={handleFileChange} />
       {result && (
         <div className="import-result">
-          הייבוא הסתיים: {result.successCount} הצלחות, {result.errorCount} שגיאות
+          Import finished: {result.successCount} successes, {result.errorCount} errors
           {result.errors.length > 0 && (
             <ul>
               {result.errors.map((err, i) => <li key={i}>{err}</li>)}

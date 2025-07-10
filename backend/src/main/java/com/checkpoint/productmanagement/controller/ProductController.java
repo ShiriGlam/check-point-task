@@ -19,7 +19,7 @@ import java.util.Optional;
 @RequestMapping("/api/products")
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin(origins = "*") // Allow CORS for frontend
+@CrossOrigin(origins = "*") 
 public class ProductController {
     
     private final ProductService productService;
@@ -45,7 +45,7 @@ public class ProductController {
         return product.map(ResponseEntity::ok)
                     .orElse(ResponseEntity.notFound().build());
     }
-    
+     
     /**
      * Create new product
      */

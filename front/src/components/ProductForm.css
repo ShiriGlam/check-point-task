@@ -1,4 +1,4 @@
-/* ProductForm - Dark Theme */
+/* ProductForm  */
 .product-form {
   background: #23262f;
   color: #f1f1f1;
@@ -38,7 +38,6 @@
   gap: 12px;
 }
 .product-form button {
-  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -47,9 +46,7 @@
   cursor: pointer;
   transition: background 0.2s;
 }
-.product-form button:hover {
-  background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
-}
+
 .product-form .error {
   color: #ff6b6b;
   margin-bottom: 12px;

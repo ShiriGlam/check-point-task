@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product } from '../types/Product.tsx';
+import { Product } from '../types/Product.ts';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -9,26 +9,24 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onEdit, onDelete }) => {
-  const isLowStock = product.quantity < 5;
-
   return (
-    <div className={`product-card${isLowStock ? ' low-stock' : ''}`}>
+    <div className={`product-card${product.isLowStock ? ' low-stock' : ''}`}>
       <div className="card-actions">
-        <button onClick={() => onEdit(product)} title="ערוך מוצר">ערוך</button>
-        <button onClick={() => onDelete(product.id)} title="מחק מוצר">מחק</button>
+        <button onClick={() => onEdit(product)} title="Edit product">Edit</button>
+        <button onClick={() => onDelete(product.id)} title="Delete product">Delete</button>
       </div>
       <div className="product-title">{product.name}</div>
-      <div className="product-category">קטגוריה: {product.category}</div>
+      <div className="product-category">Category: {product.category}</div>
       <div className="product-details">
-        <div className="product-price">₪{product.price.toFixed(2)}</div>
-        <div className="product-quantity">כמות: {product.quantity}</div>
+        <div className="product-price">${product.price.toFixed(2)}</div>
+        <div className="product-quantity">Quantity: {product.quantity}</div>
       </div>
-      {isLowStock && (
-        <div className="low-stock-alert">כמות נמוכה במלאי - יש צורך בהזמנה</div>
+      {product.isLowStock && (
+        <div className="low-stock-alert">Low stock - reorder needed</div>
       )}
       <div className="product-dates">
-        <div>נוצר: {new Date(product.createdAt).toLocaleDateString('he-IL')}</div>
-        <div>עודכן: {new Date(product.updatedAt).toLocaleDateString('he-IL')}</div>
+        <div>Created: {new Date(product.createdAt).toLocaleDateString('en-US')}</div>
+        <div>Updated: {new Date(product.updatedAt).toLocaleDateString('en-US')}</div>
       </div>
     </div>
   );
