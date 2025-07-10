@@ -24,14 +24,12 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity<Order> processOrder(@Valid @RequestBody OrderDto orderDto) {
-        log.info("POST /api/orders - Processing order for product ID: {}, quantity: {}", 
-                orderDto.getProductId(), orderDto.getQuantity());
+
         
         try {
             Order order = orderService.processOrder(orderDto);
             return ResponseEntity.status(HttpStatus.CREATED).body(order);
         } catch (IllegalArgumentException e) {
-            log.error("Order processing failed: {}", e.getMessage());
             return ResponseEntity.badRequest().build();
         }
     }
@@ -39,14 +37,12 @@ public class OrderController {
 
     @GetMapping
     public ResponseEntity<List<Order>> getAllOrders() {
-        log.info("GET /api/orders - Fetching all orders");
         List<Order> orders = orderService.getAllOrders();
         return ResponseEntity.ok(orders);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
-        log.info("GET /api/orders/{} - Fetching order by ID", id);
         return orderService.getOrderById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

@@ -26,7 +26,6 @@ public class CsvImportService {
      * Import products from CSV file
      */
     public ImportResult importProductsFromCsv(MultipartFile file) {
-        log.info("Starting CSV import from file: {}", file.getOriginalFilename());
         
         ImportResult result = new ImportResult();
         List<String> errors = new ArrayList<>();
@@ -48,25 +47,21 @@ public class CsvImportService {
                     ProductDto productDto = parseCsvLine(line, lineNumber);
                     Product savedProduct = productService.createProduct(productDto);
                     successCount++;
-                    log.info("Imported product: {} (ID: {})", savedProduct.getName(), savedProduct.getId());
                 } catch (Exception e) {
                     String error = String.format("Line %d: %s", lineNumber, e.getMessage());
                     errors.add(error);
-                    log.error("Error importing line {}: {}", lineNumber, e.getMessage());
                 }
             }
             
         } catch (IOException | CsvValidationException e) {
             String error = "Error reading CSV file: " + e.getMessage();
             errors.add(error);
-            log.error("CSV import failed: {}", e.getMessage());
         }
         
         result.setSuccessCount(successCount);
         result.setErrorCount(errors.size());
         result.setErrors(errors);
         
-        log.info("CSV import completed. Success: {}, Errors: {}", successCount, errors.size());
         return result;
     }
     
