@@ -1,0 +1,76 @@
+2025-07-10 11:58:08 - Starting ProductManagementApplication using Java 19.0.2 with PID 19200 (C:\Users\shiri\OneDrive\Desktop\check-point-task\backend\target\classes started by shiri in C:\Users\shiri\OneDrive\Desktop\check-point-task)
+2025-07-10 11:58:08 - No active profile set, falling back to 1 default profile: "default"
+2025-07-10 11:58:09 - Tomcat initialized with port 8080 (http)
+2025-07-10 11:58:09 - Starting service [Tomcat]
+2025-07-10 11:58:09 - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-07-10 11:58:09 - Initializing Spring embedded WebApplicationContext
+2025-07-10 11:58:09 - Root WebApplicationContext: initialization completed in 1234 ms
+2025-07-10 11:58:09 - Tomcat started on port 8080 (http) with context path ''
+2025-07-10 11:58:09 - Started ProductManagementApplication in 2.239 seconds (process running for 2.61)
+2025-07-10 11:58:59 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-10 11:58:59 - Initializing Servlet 'dispatcherServlet'
+2025-07-10 11:58:59 - Completed initialization in 2 ms
+2025-07-10 11:58:59 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 11:58:59 - GET /api/products - Fetching all products
+2025-07-10 11:58:59 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 11:58:59 - GET /api/products - Fetching all products
+2025-07-10 12:00:36 - POST /api/products - Creating new product: לחם
+2025-07-10 12:00:36 - GET /api/products - Fetching all products
+2025-07-10 12:01:47 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:01:47 - GET /api/products - Fetching all products
+2025-07-10 12:01:47 - GET /api/products - Fetching all products
+2025-07-10 12:01:47 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:03:29 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:03:29 - GET /api/products - Fetching all products
+2025-07-10 12:03:29 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:03:29 - GET /api/products - Fetching all products
+2025-07-10 12:05:14 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:05:14 - GET /api/products - Fetching all products
+2025-07-10 12:05:14 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:05:14 - GET /api/products - Fetching all products
+2025-07-10 12:06:36 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:06:36 - GET /api/products - Fetching all products
+2025-07-10 12:06:36 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:06:36 - GET /api/products - Fetching all products
+2025-07-10 12:07:38 - GET /api/products - Fetching all products
+2025-07-10 12:07:38 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:07:38 - GET /api/products - Fetching all products
+2025-07-10 12:07:38 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:08:28 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:08:28 - GET /api/products - Fetching all products
+2025-07-10 12:08:28 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:08:28 - GET /api/products - Fetching all products
+2025-07-10 12:09:35 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:09:35 - GET /api/products - Fetching all products
+2025-07-10 12:09:35 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:09:35 - GET /api/products - Fetching all products
+2025-07-10 12:09:59 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:09:59 - GET /api/products - Fetching all products
+2025-07-10 12:09:59 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:09:59 - GET /api/products - Fetching all products
+2025-07-10 12:31:38 - Starting ProductManagementApplication using Java 19.0.2 with PID 28268 (C:\Users\shiri\OneDrive\Desktop\check-point-task\backend\target\classes started by shiri in C:\Users\shiri\OneDrive\Desktop\check-point-task)
+2025-07-10 12:31:38 - No active profile set, falling back to 1 default profile: "default"
+2025-07-10 12:31:39 - Tomcat initialized with port 8080 (http)
+2025-07-10 12:31:39 - Starting service [Tomcat]
+2025-07-10 12:31:39 - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-07-10 12:31:39 - Initializing Spring embedded WebApplicationContext
+2025-07-10 12:31:39 - Root WebApplicationContext: initialization completed in 1233 ms
+2025-07-10 12:31:39 - Tomcat started on port 8080 (http) with context path ''
+2025-07-10 12:31:39 - Started ProductManagementApplication in 2.13 seconds (process running for 2.521)
+2025-07-10 12:32:06 - A cookie header was received [g_state={"i_l":0};] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-07-10 12:32:06 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-10 12:32:06 - Initializing Servlet 'dispatcherServlet'
+2025-07-10 12:32:06 - Completed initialization in 2 ms
+2025-07-10 12:32:07 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:32:07 - GET /api/products - Fetching all products
+2025-07-10 12:32:07 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:32:07 - GET /api/products - Fetching all products
+2025-07-10 12:32:07 - GET /api/products - Fetching all products
+2025-07-10 12:32:07 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:32:07 - GET /api/products/low-stock - Fetching low stock products
+2025-07-10 12:32:07 - GET /api/products - Fetching all products
+2025-07-10 12:32:32 - POST /api/products - Creating new product: לחם
+2025-07-10 12:32:32 - GET /api/products - Fetching all products
+2025-07-10 12:32:37 - PUT /api/products/1 - Updating product
+2025-07-10 12:32:37 - GET /api/products - Fetching all products

@@ -1,0 +1,19 @@
+# Maven target directory
+/target/
+
+/.idea/
+*.iml
+*.ipr
+*.iws
+
+
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+
