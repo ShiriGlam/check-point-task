@@ -1,0 +1,40 @@
+/* ProductList - Dark Theme */
+.product-list-container {
+  background: #181a20;
+  color: #f1f1f1;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #000a;
+  padding: 32px 24px;
+  margin: 32px auto;
+  max-width: 800px;
+}
+.product-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.product-list-header h1 {
+  font-size: 2rem;
+  color: #a3a8f0;
+  letter-spacing: 1px;
+}
+.product-list-actions button {
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-left: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.product-list-actions button:hover {
+  background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+}
+.product-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+} 

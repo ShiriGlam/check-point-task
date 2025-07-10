@@ -1,0 +1,18 @@
+/* LowStockAlert - Dark Theme */
+.low-stock-alert-bar {
+  background: #2d3142;
+  color: #ff6b6b;
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin: 18px 0;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #0005;
+}
+.low-stock-alert-bar ul {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+}
+.low-stock-alert-bar li {
+  color: #f1f1f1;
+  font-weight: normal;
+} 

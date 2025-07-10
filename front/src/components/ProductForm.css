@@ -1,0 +1,56 @@
+/* ProductForm - Dark Theme */
+.product-form {
+  background: #23262f;
+  color: #f1f1f1;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0008;
+  padding: 24px 20px;
+  margin: 24px auto;
+  max-width: 400px;
+}
+.product-form h2 {
+  color: #a3a8f0;
+  margin-bottom: 16px;
+}
+.product-form label {
+  display: block;
+  margin-bottom: 4px;
+  color: #b0b3c6;
+}
+.product-form input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #181a20;
+  color: #f1f1f1;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+.product-form input:focus {
+  border: 1.5px solid #6a82fb;
+  outline: none;
+}
+.product-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.product-form button {
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.product-form button:hover {
+  background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+}
+.product-form .error {
+  color: #ff6b6b;
+  margin-bottom: 12px;
+} 
