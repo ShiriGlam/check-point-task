@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Product, OrderDto } from '../types/Product';
-import { productApi } from '../services/api';
+import { Product, OrderDto } from '../types/Product.tsx';
+import { productApi } from '../services/api.ts';
 import './OrderForm.css';
 
 interface OrderFormProps {

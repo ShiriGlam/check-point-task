@@ -40,6 +40,10 @@ const ProductList: React.FC = () => {
     fetchProducts();
   };
 
+  const handleOrderComplete = () => {
+    fetchProducts(); 
+  };
+
   return (
     <div className="product-list-container">
       <div className="product-list-header">
@@ -64,6 +68,7 @@ const ProductList: React.FC = () => {
             product={product}
             onEdit={handleEdit}
             onDelete={handleDelete}
+            onOrderComplete={handleOrderComplete}
           />
         ))}
       </div>

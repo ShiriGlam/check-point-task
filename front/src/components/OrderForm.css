@@ -1,0 +1,133 @@
+.order-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.order-form {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 24px;
+  width: 400px;
+  max-width: 90vw;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.order-form h2 {
+  margin: 0 0 20px 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.product-info {
+  background: #3a3a3a;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.product-info h3 {
+  margin: 0 0 8px 0;
+  color: #4CAF50;
+}
+
+.product-info p {
+  margin: 4px 0;
+  color: #cccccc;
+}
+
+.order-form form > div {
+  margin-bottom: 16px;
+}
+
+.order-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.order-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: #3a3a3a;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.order-form input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.order-summary {
+  background: #3a3a3a;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 16px 0;
+}
+
+.order-summary p {
+  margin: 0;
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-actions button[type="submit"] {
+  background: #4CAF50;
+  color: white;
+}
+
+.form-actions button[type="submit"]:hover:not(:disabled) {
+  background: #45a049;
+}
+
+.form-actions button[type="submit"]:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+.form-actions button[type="button"] {
+  background: #666;
+  color: white;
+}
+
+.form-actions button[type="button"]:hover {
+  background: #555;
+}
+
+.error {
+  background: #f44336;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+  font-size: 14px;
+} 
