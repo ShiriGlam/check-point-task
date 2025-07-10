@@ -89,25 +89,6 @@ public class ProductController {
         return ResponseEntity.ok(lowStockProducts);
     }
     
-    /**
-     * Search products by name
-     */
-    @GetMapping("/search")
-    public ResponseEntity<List<Product>> searchProductsByName(@RequestParam String name) {
-        log.info("GET /api/products/search?name={} - Searching products by name", name);
-        List<Product> products = productService.searchProductsByName(name);
-        return ResponseEntity.ok(products);
-    }
-    
-    /**
-     * Get products by category
-     */
-    @GetMapping("/category/{category}")
-    public ResponseEntity<List<Product>> getProductsByCategory(@PathVariable String category) {
-        log.info("GET /api/products/category/{} - Fetching products by category", category);
-        List<Product> products = productService.getProductsByCategory(category);
-        return ResponseEntity.ok(products);
-    }
     
     /**
      * Import products from CSV file

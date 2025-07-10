@@ -29,14 +29,13 @@ public class ProductService {
                 LocalDateTime.now()
         );
         products.add(product);
-        loggingService.logOperation("CREATE", "Product created with ID: " + product.getId());
+        loggingService.logOperation("CREATE_PRODUCT", product.getId(), product.getName(), product.getQuantity());
         return product;
     }
 
     public List<Product> getAllProducts() {
-        // Update isLowStock for existing products that might not have it set
         updateLowStockForExistingProducts();
-        loggingService.logOperation("READ", "Fetched all products");
+
         return new ArrayList<>(products);
     }
 
@@ -64,16 +63,18 @@ public class ProductService {
             product.setQuantity(productDto.getQuantity());
             product.setLowStock(productDto.getQuantity() < 5);
             product.setUpdatedAt(LocalDateTime.now());
-            loggingService.logOperation("UPDATE", "Updated product with ID: " + id);
+            loggingService.logOperation("UPDATE_PRODUCT", product.getId(), product.getName(), product.getQuantity());
             return Optional.of(product);
         }
         return Optional.empty();
     }
 
     public boolean deleteProduct(Long id) {
+        Optional<Product> productOpt = getProductById(id);
         boolean removed = products.removeIf(p -> p.getId().equals(id));
-        if (removed) {
-            loggingService.logOperation("DELETE", "Deleted product with ID: " + id);
+        if (removed && productOpt.isPresent()) {
+            Product product = productOpt.get();
+            loggingService.logOperation("DELETE_PRODUCT", product.getId(), product.getName(), product.getQuantity());
         }
         return removed;
     }
@@ -82,25 +83,9 @@ public class ProductService {
         List<Product> lowStock = products.stream()
                 .filter(Product::isLowStock)
                 .collect(Collectors.toList());
-        loggingService.logOperation("READ", "Fetched " + lowStock.size() + " low stock products");
         return lowStock;
     }
 
-    public List<Product> searchProductsByName(String name) {
-        List<Product> found = products.stream()
-                .filter(p -> p.getName().toLowerCase().contains(name.toLowerCase()))
-                .collect(Collectors.toList());
-        loggingService.logOperation("READ", "Searched products by name: " + name + ", found: " + found.size());
-        return found;
-    }
-
-    public List<Product> getProductsByCategory(String category) {
-        List<Product> found = products.stream()
-                .filter(p -> p.getCategory().equalsIgnoreCase(category))
-                .collect(Collectors.toList());
-        loggingService.logOperation("READ", "Fetched products by category: " + category + ", count: " + found.size());
-        return found;
-    }
 
     public int getOperationCounter() {
         return loggingService.getPendingOperationsCount();

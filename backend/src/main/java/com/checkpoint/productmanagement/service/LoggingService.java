@@ -17,9 +17,9 @@ public class LoggingService {
     private final String LOG_FILE_PATH = "operations.log";
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    public void logOperation(String operation, String details) {
-        String logEntry = String.format("[%s] %s: %s", 
-            LocalDateTime.now().format(formatter), operation, details);
+    public void logOperation(String operation, Long id, String name, Integer quantity) {
+        String logEntry = String.format("[%s] %s: ID = %d, Name = %s, Quantity = %d", 
+            LocalDateTime.now().format(formatter), operation, id, name, quantity);
         pendingOperations.add(logEntry);
         
         // Write to file if we have 5 or more operations
@@ -50,14 +50,13 @@ public class LoggingService {
                 writer.println(operation);
             }
             
-            writer.println("=== End Log ===");
             writer.println();
             
         } catch (IOException e) {
             System.err.println("Error writing to log file: " + e.getMessage());
         }
         
-        // Clear the pending operations after writing
+
         pendingOperations.clear();
     }
 
