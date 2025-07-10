@@ -8,26 +8,26 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
 @Service
 public class LoggingService {
-    private final List<String> pendingOperations = new ArrayList<>();
+    private final Queue<String> pendingOperations = new LinkedList<>();
     private final String LOG_FILE_PATH = "operations.log";
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     public void logOperation(String operation, Long id, String name, Integer quantity) {
         String logEntry = String.format("[%s] %s: ID = %d, Name = %s, Quantity = %d", 
             LocalDateTime.now().format(formatter), operation, id, name, quantity);
-        pendingOperations.add(logEntry);
+        pendingOperations.offer(logEntry);
         
-        // Write to file if we have 5 or more operations
+        //write to file if we have 5 or more operations
         if (pendingOperations.size() >= 5) {
             writeToFile();
         }
     }
-// 10 minutes = 600,000 milliseconds
+//10 minutes= 600000 millisec
     @Scheduled(fixedRate = 600000) 
     public void scheduledLogWrite() {
         if (!pendingOperations.isEmpty()) {
@@ -41,12 +41,9 @@ public class LoggingService {
         }
 
         try (PrintWriter writer = new PrintWriter(new FileWriter(LOG_FILE_PATH, true))) {
-            writer.println("=== Operations Log ===");
-            writer.println("Timestamp: " + LocalDateTime.now().format(formatter));
-            writer.println("Operations count: " + pendingOperations.size());
-            writer.println();
             
-            for (String operation : pendingOperations) {
+            while (!pendingOperations.isEmpty()) {
+                String operation = pendingOperations.poll();
                 writer.println(operation);
             }
             
@@ -57,7 +54,6 @@ public class LoggingService {
         }
         
 
-        pendingOperations.clear();
     }
 
     public int getPendingOperationsCount() {
