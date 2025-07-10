@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Product, ProductFormData, CsvImportResult } from '../types/Product';
+import { Product, ProductFormData, CsvImportResult, Order, OrderDto } from '../types/Product';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
 
@@ -52,6 +52,19 @@ export const productApi = {
   },
   getOperationCounter: async (): Promise<number> => {
     const response = await api.get('/products/stats/operations');
+    return response.data;
+  },
+  // Order APIs
+  processOrder: async (orderData: OrderDto): Promise<Order> => {
+    const response = await api.post('/orders', orderData);
+    return response.data;
+  },
+  getAllOrders: async (): Promise<Order[]> => {
+    const response = await api.get('/orders');
+    return response.data;
+  },
+  getOrderById: async (id: number): Promise<Order> => {
+    const response = await api.get(`/orders/${id}`);
     return response.data;
   },
 };
