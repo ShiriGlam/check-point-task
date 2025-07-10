@@ -8,3 +8,4 @@ React frontend  & Java Spring Boot backend
 - **Frontend**: React & TypeScript
 - **Backend**: Java Spring Boot
 - **Storage**: In-Memory (List<Product>)
+
