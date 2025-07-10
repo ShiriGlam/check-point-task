@@ -16,22 +16,28 @@ public class LoggingService {
     private final Queue<String> pendingOperations = new LinkedList<>();
     private final String LOG_FILE_PATH = "operations.log";
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private final Object fileWriteLock = new Object();
 
     public void logOperation(String operation, Long id, String name, Integer quantity) {
         String logEntry = String.format("[%s] %s: ID = %d, Name = %s, Quantity = %d", 
             LocalDateTime.now().format(formatter), operation, id, name, quantity);
-        pendingOperations.offer(logEntry);
         
-        //write to file if we have 5 or more operations
-        if (pendingOperations.size() >= 5) {
-            writeToFile();
+        synchronized (fileWriteLock) {
+            pendingOperations.offer(logEntry);
+            
+            //write to file if we have 5 or more operations
+            if (pendingOperations.size() >= 5) {
+                writeToFile();
+            }
         }
     }
 //10 minutes= 600000 millisec
     @Scheduled(fixedRate = 600000) 
     public void scheduledLogWrite() {
-        if (!pendingOperations.isEmpty()) {
-            writeToFile();
+        synchronized (fileWriteLock) {
+            if (!pendingOperations.isEmpty()) {
+                writeToFile();
+            }
         }
     }
 
@@ -57,6 +63,8 @@ public class LoggingService {
     }
 
     public int getPendingOperationsCount() {
-        return pendingOperations.size();
+        synchronized (fileWriteLock) {
+            return pendingOperations.size();
+        }
     }
 } 
